@@ -17,9 +17,9 @@ export default function RootLayout({ children }) {
     >
       <head>
       </head>
-      <body className="antialiased w-full flex flex-col items-center bg-gray-50 dark:bg-black">
+      <body className="antialiased w-full flex flex-col items-center bg-gray-50 dark:bg-gradient-to-l from-gray-900 to-slate-900">
       <ThemeProviders>
-        <div className="md:border-x max-w-6xl md:w-7/12 pt-6 px-20 bg-white dark:bg-gray-800 h-screen">
+        <div className="md:shadow-md max-w-6xl md:w-7/12 pt-6 px-20 bg-white dark:bg-gray-800 h-screen">
       <Navbar />
         <main>
           {children}
