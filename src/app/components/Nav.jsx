@@ -2,9 +2,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import ThemeSwitcher from "./ThemeSwitcher";
-import Image from 'next/image';
+import Image from "next/image";
 import { Bars3Icon, Bars3BottomLeftIcon } from "@heroicons/react/24/solid";
-import JoelPicture from '/public/images/joel-picture.png';
+import JoelPicture from "/public/images/joel-picture.png";
+import Tooltip from "./Tooltip";
 
 const navItems = {
   "/": {
@@ -28,14 +29,16 @@ export function Navbar() {
   return (
     <nav className="w-full px-0 py-5 fade" id="nav">
       <div className="flex flex-row items-center justify-between space-x-0">
-      <Link href="/">
-        <Image
-          className="w-10 h-10 rounded-full ring-2 ring-gray-200 dark:ring-gray-500" 
-          src={JoelPicture}
-          width={500}
-          height={500}
-          alt="Picture of the author"
-        />
+        <Link href="/">
+          <Tooltip text="Joel Bello">
+            <Image
+              className="w-10 h-10 rounded-full ring-2 ring-gray-200 dark:ring-gray-500"
+              src={JoelPicture}
+              width={500}
+              height={500}
+              alt="Picture of the author"
+            />
+          </Tooltip>
         </Link>
         <div className="hidden md:flex p-2 flex-row items-center rounded-full bg-gray-100 dark:bg-gray-700">
           {Object.entries(navItems).map(([path, { name }]) => (
